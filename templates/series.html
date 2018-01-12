@@ -3,13 +3,14 @@
 
 <body>
   <p><a href="/">back</a></p>
-  {% for href, image, title, year in items %}
+  {% for artwork in artworks %}
+  {% set artwork_info = artworks[artwork] %}
     <div class="series-large responsive">
     <div class="gallery">
-      <a target="{{ series }}/{{ href }}" href="{{ series }}/{{ href }}">
-        <img src="{{ url_for('static', filename='imgs/' + image) }}" alt="{{ title }}. ({{ year }}).">
+      <a target="_self" href="{{ series }}/{{ artwork_info['url'] }}">
+        <img src="{{ url_for('static', filename='imgs/' + artwork_info['thumbnail']) }}" alt="{{ artwork_info['title'] }}. ({{ artwork_info['year'] }}).">
       </a>
-      <p class="caption">{{ title }}. ({{ year }}).</p>
+      <p class="caption">{{ artwork_info['title'] }}. ({{ artwork_info['year'] }}).</p>
     </div>
   </div>
   {% endfor %}

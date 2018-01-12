@@ -1,41 +1,39 @@
-# TESTING OUT SOME TOML
-
 [blood.hemositic]
 # HEMOSITIC BATTERY
 url = "hemositic"
-thumnail = "battery3-crop.gif"
+thumbnail = "battery3-crop.gif"
 title = "Who Will Feed Us When You're Gone?"
 year = "2017"
 materials = "Blood, glass, copper, zinc, stainless steel, cotton, rubber, wood, foamcore, vinyl, LED light, electronic circuit"
-images = ["battery3.gif"]
+images = ["hemositic_battery/battery3.gif"]
 text = '''
 <i>Who Will Feed Us When You’re Gone?</i> (Hemositic Battery) is a galvanic battery that uses blood to power a single, blinking LED.  The battery, constructed of glass vials, copper and zinc electrodes, and red and blue wires, sits on a white vinyl covered pedestal.  Above it on six, slender wire legs crouches the free form circuit controlling the LED.</p> <p>Across cultures and throughout history, blood has been used as a proxy for identity and cultural knowledge. In Korea, beginning in the early 1900s, nationalists pushed the idea of a pure, ethno-state (단일민족) that superseded geographical boundaries and united the Korean people through a shared bloodline and common ancestry. This notion persists today and underlies both a sense of unity and solidarity with the Korean diaspora, as well as discriminatory practices against non-Koreans and “mixed blood” (혼혈) Koreans within Korea.</p><p>An unsettling mix of the organic and electronic, the battery perverts the link between blood and national and ethnic identity.  It asks whether blood, removed from its biological context, continues to hold these characteristics and whether it might impart these characteristics onto another entity when used to bring it to “life.”</p>
 '''
 
-[blood.family_portrait]
+[blood.family-portrait]
 # FAMILY PORTRAIT
 url = "family-portrait"
-thumnail = "family_portrait.gif"
+thumbnail = "family_portrait.gif"
 title = "Family Portrait"
 year = "2017"
 materials = "Copper, zinc, blood, gelatin, water, red LED"
-images = ["family_portrait.jpg"]
+images = ["family_portrait/family_portrait.jpg"]
 text = ""
 
-[blood.solitary_figure]
+[blood.solitary-figure]
 # SOLITARY FIGURE
 url = "solitary-figure"
-thumnail = "solitary_figure.jpg"
+thumbnail = "solitary_figure.jpg"
 title = "Solitary Figure"
 year = "2017"
 materials = "Copper, zinc, blood, gelatin, water, red LED"
-images = ["solitary_figure.gif"]
+images = ["solitary_figure/solitary_figure.gif"]
 text = ""
 
 [blood.jjambbong]
 # JJAMBBONG
 url = "jjambbong"
-thumnail = "jjambbong/8-light.jpg"
+thumbnail = "jjambbong/8-light.jpg"
 title = "짬뽕 / The Leftovers"
 year = "2017"
 materials = "Copper, zinc, blood, gelatin, water, glass, red LED"
@@ -51,7 +49,7 @@ text = ""
 [blood.face]
 # FACE
 url = "face"
-thumnail = "face/IMG_20180106_122156-light.jpg"
+thumbnail = "face/IMG_20180106_122156-light.jpg"
 title = "Untitled"
 year = "2018"
 materials = "Copper, zinc, blood, gelatin, water, red LED"

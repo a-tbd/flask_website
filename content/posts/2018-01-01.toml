@@ -1,0 +1,13 @@
+date = "2018-01-01"
+
+en = """
+Happy New Year!  Mostly working on documentation today.  I also did a few test patches of plastic for my teeth project.
+"""
+
+kr = """
+새해 복 많이 받으세요! 오늘도 주로 문서화를 위해 일했다. 또 저의 치아프로젝트를 위해 시험적으로 몇가지 프라스틱 조각들을 사용해 볼까합니다. 
+"""
+
+images = ["teeth/IMG_20180101_210330.jpg"]
+
+tags = ["teeth"]
