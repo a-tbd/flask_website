@@ -1,0 +1,14 @@
+date = "2017-22-12"
+
+en = """
+Created two sculptural batteries. The gelatin is much more slippery than I expected. On Haan's suggestion, I sprinkled salt over the gelatin. I think this caused it to dry out a bit and become more tacky, so the sculpture held together fairly well towards the end of the shoot.
+\n
+Reviewing the photos, I wish I had gotten more angles and tried a few different options for connecting the batteries, beyond the copper plate. I still have a batch of gelatin in the fridge so would like to try one more form. Perhaps with wires instead of disks connecting the battery cells.
+"""
+
+kr = """
+"""
+
+images = ["family_portrait/family_portrait.jpg"]
+
+tags = ["blood batteries", "electronics"]

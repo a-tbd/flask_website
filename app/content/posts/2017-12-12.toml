@@ -1,0 +1,14 @@
+date = "2017-12-12"
+
+en = """
+Again, frustratingly, a math day. And a mostly unproductive one at that. I feel distracted by project ideas and am having trouble concentrating on studying.
+\n
+Also, SFPC holiday party. Spoke to Hsing from Makery about workshops, and Taeyoon about residencies. Will keep plugging away.
+"""
+
+kr = """
+"""
+
+images = []
+
+tags = ["math", "sfpc"]

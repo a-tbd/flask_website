@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+<body class="blog-post responsive">
+<p><a href="/{{ ('/').join(request.referrer.split('/')[3:]) }}">back</a></p>
+{% for post in reversed(all_posts) %}
+<a target="" href="/blog/{{ post }}">
+    <h3>{{ format_date(post) }}</h3>
+</a>
+<p>{{ create_markdown(all_posts[post]['en']) }}</p>
+<p>{{ create_markdown(all_posts[post]['kr']) }}</p>
+
+{% for image in all_posts[post]['images'] %}
+{% if image[0] == '<' %}{{ create_markdown(image) }}
+{% else %}
+<img class="blog-post responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
+<br>
+{% endif %}
+{% endfor %}
+
+<p>{% for tag in all_posts[post]['tags'] %}<a href="/blog/tag/{{ tag }}">{{ tag }} </a>{% endfor %}</p>
+<br>
+{% endfor %}
+</body>
+{% endblock %}

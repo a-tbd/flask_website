@@ -1,0 +1,16 @@
+date = "2017-08-12"
+
+en = """
+Calculus day. Did not do any work on my projects.
+\n
+I am feeling frustrated that the math class is taking seemingly precious time away from my projects. I feel like I'm starting from so far behind as it is, I'm loath to waste time pursuing dead ends. I know that I will never know where a path leads, and that the option to quit the class is always there, and that there is beauty in simply learning for the sake of learning - especially math, which I believe is the purest form of human creativity. 
+\n
+However, it is hard to focus during this last push before the final exam. My mind feels fuzzy and I am drawn to other projects ideas. I try to jot them down as they enter my head so that I can move on and revisit them later, rather than jumping on them in that very moment.
+"""
+
+kr = """
+"""
+
+images = []
+
+tags = ["math", "random thoughts"]
