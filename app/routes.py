@@ -9,8 +9,6 @@ import toml
 from datetime import datetime
 from sortedcontainers import SortedDict
 
-# app = Flask(__name__, static_folder='/app')
-# app.config.from_object('config')
 
 all_posts = SortedDict({})
 
