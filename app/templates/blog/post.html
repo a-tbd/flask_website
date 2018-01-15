@@ -2,9 +2,10 @@
 {% block body %}
 <body class="blog-post responsive">
 <p><a href="/{{ ('/').join(request.referrer.split('/')[3:]) }}">back</a></p>
+
 {% for post in reversed(all_posts) %}
 <a target="" href="/blog/{{ post }}">
-    <h3>{{ format_date(post) }}</h3>
+<h3>{{ format_date(post) }}</h3>
 </a>
 <p>{{ create_markdown(all_posts[post]['en']) }}</p>
 <p>{{ create_markdown(all_posts[post]['kr']) }}</p>
@@ -17,7 +18,7 @@
 {% endif %}
 {% endfor %}
 
-<p>{% for tag in all_posts[post]['tags'] %}<a href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
+<p>{% for tag in all_posts[post]['tags'] %}<a class="tag" href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
 <br>
 {% endfor %}
 </body>
