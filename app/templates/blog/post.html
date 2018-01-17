@@ -4,21 +4,22 @@
 <p><a href="/{{ ('/').join(request.referrer.split('/')[3:]) }}">back</a></p>
 
 {% for post in reversed(all_posts) %}
+{% set post_info = all_posts[post] %}
 <a target="" href="/blog/{{ post }}">
-<h3>{{ format_date(post) }}</h3>
+<h3>{{ post_info.format_date_title() }}</h3>
 </a>
-<p>{{ create_markdown(all_posts[post]['en']) }}</p>
-<p>{{ create_markdown(all_posts[post]['kr']) }}</p>
+<p>{{ post_info.create_markdown(post_info.en) }}</p>
+<p>{{ post_info.create_markdown(post_info.kr) }}</p>
 
-{% for image in all_posts[post]['images'] %}
-{% if image[0] == '<' %}{{ create_markdown(image) }}
+{% for image in all_posts[post].images %}
+{% if image[0] == '<' %}{{ post_info.create_markdown(image) }}
 {% else %}
 <img class="blog-post responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
 <br>
 {% endif %}
 {% endfor %}
 
-<p>{% for tag in all_posts[post]['tags'] %}<a class="tag" href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
+<p>{% for tag in post_info.tags %}<a class="tag" href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
 <br>
 {% endfor %}
 </body>

@@ -57,6 +57,25 @@ a.tag {
   font-size: 8pt;
 }
 
+.button {
+    background-color: grey;
+    border: none;
+    color: white;
+}
+
+.write_post {
+
+}
+
+.large-textbox {
+    height: 300px;
+    width: 90%;
+}
+
+.med-textbox {
+    width: 90%;
+}
+
 .clearfix:after {
     content: "";
     display: table;

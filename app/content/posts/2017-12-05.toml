@@ -1,4 +1,4 @@
-date = "2017-05-12"
+date = "2017-12-05"
 
 en = """
 Worked on a tiered battery combining cells in parallel and series. The experiment was a partial success. Voltage increased as expected with added layers, however current decreased slightly. I suspect the parallel stacking is not effective electrochemically, though it may still be worth pursuing for visual effect.

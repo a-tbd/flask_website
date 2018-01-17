@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="write_post">
+	<form action="" method="post">
+		<input type="date" placeholder="Date" name="date" value="{{ date }}">
+		<input class="large-textbox" type="text" placeholder="english" name="en" value="{{ request.form.en }}">
+		<input class="large-textbox" type="text" placeholder="korean" name="kr" value="{{ request.form.kr }}">
+		<input class="med-textbox" type="text" placeholder="images" name="images" value="{{ request.form.images }}">
+		<input class="med-textbox" type="text" placeholder="tags" name="tags" value="{{ request.form.tags }}">
+		<input class="button" type="submit" value="Write Post">
+	</form>
+</div>
+{% endblock %}

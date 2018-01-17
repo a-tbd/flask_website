@@ -3,19 +3,19 @@
 <body class="blog-post responsive">
 <p><a href="{{ url_for('blog') }}">back</a></p>
 
-<h3>{{ format_date(content['date']) }}</h3>
-<p>{{ create_markdown(content['en']) }}</p>
-<p>{{ create_markdown(content['kr']) }}</p>
+<h3>{{ content.format_date_title() }}</h3>
+<p>{{ content.create_markdown(content.en) }}</p>
+<p>{{ content.create_markdown(content.kr) }}</p>
 
-{% for image in content['images'] %}
-{% if image[0] == '<' %}{{ create_markdown(image) }}
+{% for image in content.images %}
+{% if image[0] == '<' %}{{ content.create_markdown(image) }}
 {% else %}
 <img class="blog-post responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
 <br>
 {% endif %}
 {% endfor %}
 
-<p>{% for tag in content['tags'] %}<a class="tag" href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
+<p>{% for tag in content.tags %}<a class="tag" href="/blog/tag/{{ tag }}">{{ tag }}</a>{% endfor %}</p>
 <br>
 </body>
 {% endblock %}

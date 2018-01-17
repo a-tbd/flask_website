@@ -1,4 +1,4 @@
-date = "2017-06-12"
+date = "2017-12-06"
 
 en = """
 Tested a simple servo motor sketch to dip a teabag. Should be straightforward to adapt this sketch to move a shaft back and forth to cause eyes to open and close.     
