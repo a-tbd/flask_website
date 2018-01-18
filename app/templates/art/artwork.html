@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <body>
-    <p><a href="{% if not request.referrer %}/series/blood {% else %}/{{ ('/').join(request.referrer.split('/')[3:]) }}{% endif %}">back</a></p>
+    <p><a href="{% if not request.referrer %}/series/blood/ {% else %}/{{ ('/').join(request.referrer.split('/')[3:]) }}{% endif %}">back</a></p>
     <br>
     {% for image in artwork_data['images'] %}
     <img class="artwork responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
@@ -9,6 +9,6 @@
     <br>
     <p class="caption">{{ artwork_data['title'] }}. {{ artwork_data['materials'] }}. ({{ artwork_data['year'] }}).</p>
     <br>
-    <div class="artwork responsive">{{ create_markdown(artwork_data['text']) }}</div>
+    <div class="artwork responsive">{{ artwork_data.create_markdown(artwork_data['text']) }}</div>
 </body>
 {% endblock %}

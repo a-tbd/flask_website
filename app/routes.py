@@ -6,7 +6,7 @@ from sortedcontainers import SortedDict
 from jinja2 import Template
 from functools import wraps
 
-from . import all_posts
+from . import all_posts, all_artworks
 from app.post import Post
 
 ######################
@@ -56,7 +56,6 @@ def series(name, series=None, artworks=None):
     """
     with open("app/content/series.toml") as conffile:
         artworks = toml.loads(conffile.read())[name]
-    print(artworks)
     return render_template('/art/series.html', series=name, artworks = artworks)
 
 @app.route('/series/<path:artwork_path>', methods=['GET'])
@@ -67,14 +66,11 @@ def artwork(artwork_path, artwork_data=None):
     """
     series, name = artwork_path.split('/')
 
-    with open('app/content/series.toml') as conffile:
-        artwork_data = toml.loads(conffile.read())[series][name]
-    return render_template('/art/artwork.html', artwork_data=artwork_data)
+    return render_template('/art/artwork.html', artwork_data=all_artworks[series][name])
 
 @app.route('/blog/', methods=['GET'])
 def blog(name=None):
     """blogroll"""
-    print(all_posts)
     return render_template('/blog/post.html', all_posts=all_posts)
 
 @app.route('/blog/<string:post_date>', methods=['GET'])
