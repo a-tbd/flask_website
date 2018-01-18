@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <body class="blog-post responsive">
-<p><a href="{% if not request.referrer %}/back {% else %}/{{ ('/').join(request.referrer.split('/')[3:]) }}{% endif %}">back</a></p>
+<p><a href="{% if not request.referrer %}/blog {% else %}/{{ ('/').join(request.referrer.split('/')[3:]) }}{% endif %}">back</a></p>
 
 {% for post in reversed(all_posts) %}
 {% set post_info = all_posts[post] %}

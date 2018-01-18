@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 <body>
-    <p><a href="/{{ ('/').join(request.referrer.split('/')[3:]) }}">back</a></p>
+    <p><a href="{% if not request.referrer %}/series/blood {% else %}/{{ ('/').join(request.referrer.split('/')[3:]) }}{% endif %}">back</a></p>
     <br>
     {% for image in artwork_data['images'] %}
     <img class="artwork responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
