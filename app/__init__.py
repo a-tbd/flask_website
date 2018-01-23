@@ -4,13 +4,9 @@ from sortedcontainers import SortedDict
 import os
 import toml
 from app import post, artwork
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 
 app = Flask(__name__, static_url_path='')
 app.config.from_object(Config)
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
 
 all_posts = SortedDict({})
 
@@ -33,5 +29,5 @@ with open('app/content/series.toml') as conffile:
                                                    artwork_info['year'], artwork_info['materials'], artwork_info['images'], artwork_info['text'])
 
 from app import blog_post
-from app import routes, models
+from app import routes
 

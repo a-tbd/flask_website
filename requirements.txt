@@ -5,5 +5,3 @@ markdown
 toml
 datetime
 sortedcontainers
-flask_sqlalchemy
-flask_migrate
