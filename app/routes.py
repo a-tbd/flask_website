@@ -76,8 +76,7 @@ def blog(name=None):
 @app.route('/blog/<string:post_date>', methods=['GET'])
 def blog_post_page(post_date, content=None): 
     """blog post"""
-    # return render_template('/blog/single_post.html', content=all_posts[post_date])
-    return render_template('/blog/single_post.html', content=all_posts)
+    return render_template('/blog/single_post.html', content=all_posts[post_date])
 
 @app.route('/blog/tag/<string:tag_name>', methods=['GET'])
 def tag_page(tag_name, tagged_posts=None):

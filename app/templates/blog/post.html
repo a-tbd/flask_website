@@ -13,7 +13,7 @@
 
 {% for image in all_posts[post].images %}
 {% if image[0] == '<' %}{{ post_info.create_markdown(image) }}
-{% else %}
+{% elif image != '' %}
 <img class="blog-post responsive" src="{{ url_for('static', filename='imgs/' + image) }}"></img>
 <br>
 {% endif %}
