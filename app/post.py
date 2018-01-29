@@ -32,13 +32,13 @@ class Post:
         
         if not isinstance(self.images, list):
             try:
-                self.images = [image for image in self.images.split(',')]
+                self.images = [image.strip() for image in self.images.split(',')]
             except:
                 raise ValueError('Images must be a comma separated list')
 
         if not isinstance(self.tags, list):
             try:
-                self.tags = [tag for tag in self.tags.split(',')]
+                self.tags = [tag.strip() for tag in self.tags.split(',')]
             except:
                 raise ValueError('Tags must be a comma separated list')
 

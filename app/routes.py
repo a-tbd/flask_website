@@ -6,8 +6,10 @@ from sortedcontainers import SortedDict
 from jinja2 import Template
 from functools import wraps
 
-from . import all_posts, all_artworks
+from . import all_posts, all_artworks, db
 from app.post import Post
+
+import pdb
 
 ######################
 ### authentication ###
@@ -68,6 +70,10 @@ def artwork(artwork_path, artwork_data=None):
 
     return render_template('/art/artwork.html', artwork_data=all_artworks[series][name])
 
+############
+### blog ###
+############
+
 @app.route('/blog/', methods=['GET'])
 def blog(name=None):
     """blogroll"""
@@ -82,10 +88,11 @@ def blog_post_page(post_date, content=None):
 def tag_page(tag_name, tagged_posts=None):
     """all posts associated with selected tag"""
     tagged_posts = SortedDict({})
-    for post in all_posts:
-        for tag in all_posts[post].tags:
-            if tag == tag_name:
-                tagged_posts[post] = all_posts[post]
+    posts = db.get_posts_for_tag(tag_name)
+    for blog_post in posts:
+        filename = blog_post[0]
+        tags = [t[0] for t in db.get_tags_for_post(filename)]
+        tagged_posts[filename] = all_posts[filename]
     return render_template('/blog/post.html', all_posts=tagged_posts)
 
 # routing for external urls --> Q: is there a better way to do this?
@@ -109,7 +116,11 @@ def write_post():
         else:
             new_post = Post(filename, request.form.get('en'), request.form.get('kr'), 
                             request.form.get('images'), request.form.get('tags'))
-            new_post.save_post(app.config.get('POST_DIR')+filename+'.toml')
+            db.add_post(filename, new_post.en, new_post.kr, new_post.images)
+            for tag in new_post.tags:
+                if not bool(db.get_tag(tag)):
+                    db.add_tag(tag)
+                db.add_relationship(filename, tag)
             all_posts[filename] = new_post
             return redirect(url_for('blog'))
     return render_template('blog/write_post.html')
@@ -121,7 +132,11 @@ def edit_post(date, content=None):
 
         new_post = Post(date, request.form.get('en'), request.form.get('kr'), 
                         request.form.get('images'), request.form.get('tags'))
-        new_post.save_post(app.config.get('POST_DIR')+date+'.toml')
+        db.add_post(date, new_post.en, new_post.kr, new_post.images)
+        for tag in new_post.tags:
+            if not bool(db.get_tag(tag)):
+                db.add_tag(tag)
+            db.add_relationship(date, tag)
         all_posts[date] = new_post
         return redirect(url_for('blog'))
     
