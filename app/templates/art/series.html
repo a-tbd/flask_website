@@ -7,10 +7,10 @@
   {% set artwork_info = artworks[artwork] %}
     <div class="series-large responsive">
     <div class="gallery">
-      <a target="_self" href="{{ series }}/{{ artwork_info['url'] }}">
-        <img src="{{ url_for('static', filename='imgs/' + artwork_info['thumbnail']) }}" alt="{{ artwork_info['title'] }}. ({{ artwork_info['year'] }}).">
+      <a target="_self" href="{{ artwork_info.series }}/{{ artwork_info.url }}">
+        <img src="{{ url_for('static', filename='imgs/' + artwork_info.thumbnail) }}" alt="{{ artwork_info.title }}. ({{ artwork_info.year }}).">
       </a>
-      <p class="caption">{{ artwork_info['title'] }}. ({{ artwork_info['year'] }}).</p>
+      <p class="caption">{{ artwork_info.title }}. ({{ artwork_info.year }}).</p>
     </div>
   </div>
   {% endfor %}

@@ -1,5 +1,5 @@
 [blood.hemositic]
-# HEMOSITIC BATTERY
+# 'HEMOSITIC BATTERY'
 url = "hemositic"
 thumbnail = "hemositic_battery/battery3-crop.gif"
 title = "Who Will Feed Us When You're Gone?"
@@ -11,7 +11,7 @@ text = '''
 '''
 
 [blood.family-portrait]
-# FAMILY PORTRAIT
+# 'FAMILY PORTRAIT'
 url = "family-portrait"
 thumbnail = "family_portrait/family_portrait.gif"
 title = "Family Portrait"
@@ -21,7 +21,7 @@ images = ["family_portrait/family_portrait.jpg"]
 text = ""
 
 [blood.solitary-figure]
-# SOLITARY FIGURE
+# 'SOLITARY FIGURE'
 url = "solitary-figure"
 thumbnail = "solitary_figure/solitary_figure.jpg"
 title = "Solitary Figure"

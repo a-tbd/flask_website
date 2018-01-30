@@ -56,9 +56,8 @@ def series(name, series=None, artworks=None):
     series page displaying thumbnails and titles
     of all artworks in the series
     """
-    with open("app/content/series.toml") as conffile:
-        artworks = toml.loads(conffile.read())[name]
-    return render_template('/art/series.html', series=name, artworks = artworks)
+    print(all_artworks[name])
+    return render_template('/art/series.html', artworks = all_artworks[name])
 
 @app.route('/series/<path:artwork_path>', methods=['GET'])
 def artwork(artwork_path, artwork_data=None):
@@ -67,7 +66,7 @@ def artwork(artwork_path, artwork_data=None):
     page includes images, followed by title and explanatory text (if available)
     """
     series, name = artwork_path.split('/')
-
+    
     return render_template('/art/artwork.html', artwork_data=all_artworks[series][name])
 
 ############

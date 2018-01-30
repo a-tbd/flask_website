@@ -7,9 +7,10 @@ import toml
 import markdown
 
 class Artwork:
-    def __init__(self, series=None, title=None, thumbnail=None, year=None, materials=None, images=None, text=None):
+    def __init__(self, series=None, title=None, url=None, thumbnail=None, year=None, materials=None, images=None, text=None):
         self.series = series
         self.title = title
+        self.url = url
         self.thumbnail = thumbnail
         self.year = year
         self.materials = materials
