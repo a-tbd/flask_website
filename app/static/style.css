@@ -1,6 +1,6 @@
 body {
     font-family: monospace;
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 div.gallery img {
@@ -63,10 +63,6 @@ a.tag {
     color: white;
 }
 
-.write_post {
-
-}
-
 .large-textbox {
     height: 300px;
     width: 90%;
@@ -80,4 +76,26 @@ a.tag {
     content: "";
     display: table;
     clear: both;
+}
+
+.scroll-contain {
+    position: absolute;
+    background-color: #e33946;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+}
+
+.banner-link a {
+    display: block;
+    padding: 15px 32px;
+    width: 100%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 20px;
+    align-content: center;
 }
