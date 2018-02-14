@@ -99,3 +99,7 @@ a.tag {
     font-size: 20px;
     align-content: center;
 }
+
+.responsive-banner a {
+    font-size: 15px;
+}
